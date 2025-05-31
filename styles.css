@@ -15,16 +15,25 @@
   --yt-icon-button-icon-height: 24px;
 
   --yt-spec-text-primary: #fff;
+  --yt-spec-text-primary-inverse: #0f0f0f;
   --yt-spec-text-secondary: #aaa;
 
   --yt-spec-base-background: #0f0f0f;
   --yt-spec-additive-background: rgba(255, 255, 255, 0.1);
   --yt-spec-red-background: #e1002d;
+  --yt-spec-button-chip-background-hover: rgba(255,255,255,0.2);
 }
 
 body {
   background-color: var(--yt-spec-base-background);
   font-family: "Roboto", Arial, sans-serif;
+  padding: 0 16px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--yt-spec-text-primary);
 }
 
 /*Clase Generales*/
@@ -49,13 +58,25 @@ body {
 
 .alinear-flex {
   align-items: center;
+  justify-content: center;
+}
+
+.space-between-flex{
   justify-content: space-between;
+}
+
+.responsive {
+    display: none;
+}
+
+.iconos-botones svg {
+  height: var(--yt-icon-button-icon-height);
+  width: var(--yt-icon-button-icon-width);
 }
 
 /*NAVBAR*/
 
 nav {
-  padding: 0 16px;
   height: 56px;
 }
 
@@ -74,8 +95,27 @@ nav {
   margin: 12px 0 0 -10px;
 }
 
+/*Nav-Centro*/
+#nav-centro {
+  flex: 1;
+  flex-basis: 0.000000001px;
+  justify-content: flex-end;
+}
+
 /*Botones Circulares*/
+
 .botones-circulares {
+  border-radius: 30px;
+  height: 40px;
+  width: 40px;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.botones-circulares-dos {
   border-radius: 30px;
   height: 40px;
   width: 40px;
@@ -94,9 +134,8 @@ nav {
   background-color: var(--yt-spec-additive-background);
 }
 
-.iconos-botones svg {
-  height: var(--yt-icon-button-icon-height);
-  width: var(--yt-icon-button-icon-width);
+.fondo-gris:hover {
+  background-color: var(--yt-spec-button-chip-background-hover);
 }
 
 /*Boton crear*/
@@ -160,4 +199,123 @@ nav {
 .boton-perfil img {
   border-radius: 30px;
   margin: 0 8px;
+}
+
+/*ASIDE*/
+aside {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+aside a{
+  width: 64px;
+  padding: 16px 0 14px;
+  flex-direction: column;
+}
+
+
+
+/*Botones de Busqueda*/
+.div-botones-busqueda {
+  gap: 12px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  padding: 10px 8px;
+}
+
+.div-botones-busqueda::-webkit-scrollbar {
+  display: none;
+}
+
+.botones-busqueda {
+  background-color: var(--yt-spec-additive-background);
+  color: var(--yt-spec-text-primary);
+  padding: 7px 12px 8px 12px;
+  transition: background-color .5s cubic-bezier(.05,0,0,1);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.boton-seleccionado {
+  background-color: var(--yt-spec-text-primary);
+  color: var(--yt-spec-text-primary-inverse);
+}
+
+
+
+
+
+@media (min-width: 768px) {
+  .responsive {
+    display: flex;
+  }
+
+  /*NAV-BAR*/
+
+  #nav-centro {
+    flex: 0 1 732px;
+    justify-content: center;
+  }
+
+  #nav-centro .botones-circulares{
+    background-color: var(--yt-spec-additive-background);
+  }
+
+  .botones-circulares-dos {
+    display: none;
+  }
+
+  .lupa{
+    display: flex;
+    border: 1px solid hsl(0, 0%, 18.82%);
+    background-color: hsla(0, 0%, 100%, .08);
+    border-radius: 0 40px 40px 0;
+    width: 64px;
+  }
+
+  /*Buscador*/
+
+  .barra-buscar {
+    flex: 1;
+    display: flex;
+    position: relative;
+    margin-left: 40px;
+    padding: 0 4px;
+    height: 40px;
+  }
+
+  .div-input-buscar{
+    position: relative;
+    background-color: hsl(0, 0%, 7%);
+    border: 1px solid hsl(0, 0%, 18.82%);
+    border-right: 0;
+    border-radius: 40px 0 0 40px;
+    margin-left: 32px;
+    padding: 0 4px 0 16px;
+    flex: 1;
+    cursor: text; 
+  }
+
+  .input-buscar{ 
+    padding: 1px 0;
+    background: transparent;
+    border: none;
+    color: var(--yt-spec-text-primary);  
+    width: 100%;
+    outline: none;
+    font-size: 1.1rem;
+    line-height: 2.3rem;
+  }
+
+  #nav-derecha{
+    min-width: 225px;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
