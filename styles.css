@@ -168,7 +168,7 @@ nav {
   justify-content: center;
   padding: 0 16px;
   height: 36px;
-  border-radius: 24px;
+  border-radius: 18px;
   font-size: 13px;
   line-height: 36px;
   font-weight: 600;
@@ -247,7 +247,7 @@ aside a{
 }
 
 aside a p {
-  font-size: 10px;
+  font-size: 9px;
   line-height: 14px;
 }
 
@@ -305,13 +305,12 @@ header {
 }
 
 .descripcion {
+  margin-top: 3px;
   display: grid; 
   grid-template-columns: 11% 79% 10%;
 }
 
 .div-perfil-video {
-  margin: 2px;
-  justify-content: center;
   width: 36px;
   height: 36px;
 }
@@ -362,7 +361,11 @@ header {
 
   /*HEADER*/
   header {
-    width: 93%;
+    width: 95%;
+  }
+
+  .descripcion {
+    grid-template-columns: 15% 72% 13%;
   }
 }
 
@@ -378,9 +381,8 @@ header {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /*HEADER*/
-  header {
-    width: 92%;
+  .descripcion {
+    grid-template-columns: 13% 75% 12%;
   }
 }
 
