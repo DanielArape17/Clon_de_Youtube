@@ -87,6 +87,8 @@ svg {
 
 nav {
   height: 56px;
+  position: sticky;
+  top: 0;
 }
 
 /*Logo Youtube*/
@@ -229,6 +231,7 @@ nav {
 /*ASIDE*/
 aside {
   margin-top: 8px;
+  margin-left: 4px;
   padding: 0 4px;
   align-items: center;
   flex-direction: column;
@@ -263,6 +266,8 @@ header {
   overflow-x: scroll;
   scrollbar-width: none;
   padding: 10px 8px;
+  position: sticky;
+  top: 56px;
 }
 
 .div-botones-busqueda::-webkit-scrollbar {
