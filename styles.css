@@ -11,8 +11,8 @@
 }
 
 :root {
-  --yt-icon-button-icon-width: 22px;
-  --yt-icon-button-icon-height: 22px;
+  --yt-icon-button-icon-width: 24px;
+  --yt-icon-button-icon-height: 24px;
 
   --yt-spec-text-primary: #fff;
   --yt-spec-text-primary-inverse: #0f0f0f;
@@ -158,13 +158,13 @@ nav {
 }
 
 .botones-circulares svg{
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
 }
 
 .botones-circulares-dos svg{
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
 }
 
 .fondo-gris {
@@ -262,13 +262,13 @@ aside {
 }
 
 aside div {
-  width: 58px;
+  width: 64px;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 aside div a{
-  width: 22px;
+  width: 24px;
   padding: 16px 0 14px;
   flex-direction: column;
   gap: 3px;
@@ -279,7 +279,7 @@ aside div:hover{
 }
 
 aside a p {
-  font-size: 9px;
+  font-size: 10px;
   line-height: 14px;
 }
 
@@ -307,12 +307,12 @@ header {
 .botones-busqueda {
   background-color: var(--yt-spec-additive-background);
   color: var(--yt-spec-text-primary);
-  padding: 4px 10px;
+  padding: 6px 12px;
   transition: background-color .5s cubic-bezier(.05,0,0,1);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   flex-wrap: nowrap;
@@ -340,6 +340,10 @@ header {
   padding: 10px 12px;
   gap: 25px;
   margin-left: 10px;
+}
+
+.div-videos > div {
+  gap: 5px;
 }
 
 .miniatura-video {
@@ -403,7 +407,7 @@ header {
   }
 
   nav {
-    padding-left: 10px;
+    padding: 0 10px;
   }
 
 
