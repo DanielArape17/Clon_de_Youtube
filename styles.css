@@ -41,6 +41,23 @@ svg {
   height: 100%;
 }
 
+/*Fixed*/
+.vidrio {
+  /* From https://css.glass */
+  background: rgba(15, 15, 15, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(48px);
+  -webkit-backdrop-filter: blur(48px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 112px;
+  z-index: 0;
+}
+
+
+
 /*Clase Generales*/
 .columna-grid-dos{
   display: grid;
@@ -122,7 +139,6 @@ nav {
 .botones-circulares {
   border-radius: 30px;
   height: 40px;
-  width: 40px;
   padding: 8px;
   border: none;
   background: transparent;
@@ -156,6 +172,10 @@ nav {
 }
 
 .botones-circulares:hover {
+  background-color: var(--yt-spec-additive-background);
+}
+
+.botones-circulares-dos:hover {
   background-color: var(--yt-spec-additive-background);
 }
 
@@ -230,8 +250,6 @@ nav {
 
 /*ASIDE*/
 aside {
-  margin-top: 8px;
-  margin-left: 4px;
   padding: 0 4px;
   align-items: center;
   flex-direction: column;
@@ -240,13 +258,24 @@ aside {
   left: 0;  
   bottom: 0;
   top: 56px;
+  align-self: flex-start;
 }
 
-aside a{
+aside div {
+  width: 58px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+aside div a{
   width: 22px;
   padding: 16px 0 14px;
   flex-direction: column;
   gap: 3px;
+}
+
+aside div:hover{
+  background-color: var(--yt-spec-button-chip-background-hover);
 }
 
 aside a p {
@@ -257,6 +286,7 @@ aside a p {
 /*HEADER*/
 header {
   width: 100%;
+  gap: 10px;
 }
 
 
@@ -265,7 +295,7 @@ header {
   gap: 12px;
   overflow-x: scroll;
   scrollbar-width: none;
-  padding: 10px 8px;
+  padding: 10px 18px;
   position: sticky;
   top: 56px;
 }
@@ -289,7 +319,16 @@ header {
   white-space: nowrap;
 }
 
+.botones-busqueda:hover {
+  background-color: var(--yt-spec-button-chip-background-hover);
+}
+
 .boton-seleccionado {
+  background-color: var(--yt-spec-text-primary);
+  color: var(--yt-spec-text-primary-inverse);
+}
+
+.boton-seleccionado:hover {
   background-color: var(--yt-spec-text-primary);
   color: var(--yt-spec-text-primary-inverse);
 }
@@ -298,7 +337,7 @@ header {
 .div-videos {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 12px;
   gap: 25px;
   margin-left: 10px;
 }
@@ -363,10 +402,14 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  nav {
+    padding-left: 10px;
+  }
+
 
   /*HEADER*/
   header {
-    width: 95%;
+    width: 92%;
   }
 
   .descripcion {
@@ -398,6 +441,10 @@ header {
     display: flex;
   }
 
+  nav > div {
+    gap: 3px
+  }
+
   /*NAV-BAR*/
 
   #nav-centro {
@@ -407,6 +454,11 @@ header {
 
   #nav-centro .botones-circulares{
     background-color: var(--yt-spec-additive-background);
+    transition: all 0.2 ease;
+  }
+
+  #nav-centro .botones-circulares:hover{
+    background-color: var(--yt-spec-button-chip-background-hover);
   }
 
   .botones-circulares-dos {
