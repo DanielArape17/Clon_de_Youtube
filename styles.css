@@ -53,7 +53,7 @@ svg {
   top: 0;
   width: 100%;
   height: 112px;
-  z-index: 0;
+  z-index: 1000;
 }
 
 
@@ -106,6 +106,7 @@ nav {
   height: 56px;
   position: sticky;
   top: 0;
+  z-index: 4000;
 }
 
 /*Logo Youtube*/
@@ -259,6 +260,7 @@ aside {
   bottom: 0;
   top: 56px;
   align-self: flex-start;
+  z-index: 4000;
 }
 
 aside div {
@@ -286,7 +288,6 @@ aside a p {
 /*HEADER*/
 header {
   width: 100%;
-  gap: 10px;
 }
 
 
@@ -298,6 +299,7 @@ header {
   padding: 10px 18px;
   position: sticky;
   top: 56px;
+  z-index: 4000;
 }
 
 .div-botones-busqueda::-webkit-scrollbar {
@@ -346,10 +348,31 @@ header {
   gap: 5px;
 }
 
+.div-miniatura-video {
+  position: relative;
+}
+
 .miniatura-video {
   width: 100%;
   height: 100%;
   border-radius: 5%;
+}
+
+.duracion-video p {
+  color: var(--yt-spec-text-primary);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  margin: 8px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  background: rgba(15, 15, 15, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(48px);
+  padding: 3px 4px;
+  border-radius: 6px;
 }
 
 .descripcion {
@@ -410,20 +433,8 @@ header {
     padding: 0 10px;
   }
 
-
-  /*HEADER*/
-  header {
-    width: 92%;
-  }
-
   .descripcion {
     grid-template-columns: 15% 72% 13%;
-  }
-}
-
-@media (max-width: 715px) {
-  header {
-    width: 100%;
   }
 }
 
@@ -435,6 +446,10 @@ header {
 
   .descripcion {
     grid-template-columns: 13% 75% 12%;
+  }
+
+  header {
+    width: 94%;
   }
 }
 
@@ -520,5 +535,10 @@ header {
     min-width: 225px;
     align-items: center;
     justify-content: flex-end;
+  }
+
+    /*HEADER*/
+  header {
+    width: 93%;
   }
 }
